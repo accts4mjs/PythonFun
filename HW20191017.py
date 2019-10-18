@@ -98,6 +98,22 @@ def func_hw6(*argv):
 
 def func_hw7(*argv):
     result = []
+    even_list = []
+    odd_list = []
+    argc = len(argv)
+    index = 0
+
+    while index < argc:
+        item = argv[index]
+        index += 1
+        if item % 2 == 0:
+            even_list.append(item)
+        else:
+            odd_list.append(item)
+    even_list.sort()
+    result.append(even_list)
+    odd_list.sort()
+    result.append(odd_list)
     return result
 
 def test_my_hw(verbose, actual, expected):
