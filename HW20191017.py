@@ -80,11 +80,25 @@ def func_hw5(*argv):
     result.sort()
     return result
 
-def func_hw6(*args):
-    return 0
+def func_hw6(*argv):
+    result = []
+    even_list = []
+    odd_list = []
 
-def func_hw7(*args):
-    return 0
+    for item in argv:
+        if item % 2 == 0:
+            even_list.append(item)
+        else:
+            odd_list.append(item)
+    even_list.sort()
+    result.append(even_list)
+    odd_list.sort()
+    result.append(odd_list)
+    return result
+
+def func_hw7(*argv):
+    result = []
+    return result
 
 def test_my_hw(verbose, actual, expected):
     if (verbose):
@@ -121,8 +135,8 @@ test_my_hw(verbose_on, func_hw5("c", "AAaattTTccCCggGGaAcCtTgG", "g"), ['AAAATTT
 
 print("HW6")
 test_my_hw(verbose_on, func_hw6(1, 4, 2, 90, 5, 3, 9), [[2, 4, 90], [1, 3, 5, 9]])
-test_my_hw(verbose_on, func_hw6(903, 901, 109283, 121, 1), [[], [1, 121, 901, 109283]])
+test_my_hw(verbose_on, func_hw6(903, 901, 109283, 121, 1), [[], [1, 121, 901, 903, 109283]])
 
 print("HW7")
 test_my_hw(verbose_on, func_hw7(1, 4, 2, 90, 5, 3, 9), [[2, 4, 90], [1, 3, 5, 9]])
-test_my_hw(verbose_on, func_hw7(903, 901, 109283, 121, 1), [[], [1, 121, 901, 109283]])
+test_my_hw(verbose_on, func_hw7(903, 901, 109283, 121, 1), [[], [1, 121, 901, 903, 109283]])
