@@ -53,8 +53,32 @@ def func_hw4(*argv):
     result.sort()
     return result
 
-def func_hw5(*args):
-    return 0
+def func_hw5(*argv):
+    result = []
+    argc = len(argv)
+    arg_index = 0
+    while arg_index < argc:
+        curr_seq = argv[arg_index]
+        arg_index += 1
+        upperstr = ""
+        seq_len = len(curr_seq)
+        seq_index = 0
+        while seq_index < seq_len:
+            mychar = curr_seq[seq_index]
+            seq_index += 1
+            if mychar == "a":
+                upperstr += "A"
+            elif mychar == "c":
+                upperstr += "C"
+            elif mychar == "g":
+                upperstr += "G"
+            elif mychar == "t":
+                upperstr += "T"
+            else:
+                upperstr += mychar
+        result.append(upperstr)
+    result.sort()
+    return result
 
 def func_hw6(*args):
     return 0
@@ -92,7 +116,7 @@ test_my_hw(verbose_on, func_hw4("A", "a", "t", "C", "g", "AA", "gG", "c", "AG", 
 test_my_hw(verbose_on, func_hw4("c", "AAaattTTccCCggGGaAcCtTgG", "g"), ['AAAATTTTCCCCGGGGAACCTTGG', 'C', 'G'])
 
 print("HW5")
-test_my_hw(verbose_on, func_hw5("A", "a", "t" "C", "g", "AA", "gG", "c", "AG", "T", "TA", "a", "G", "aaaa"), ['A', 'A', 'A', 'AA', 'AAAA', 'AG', 'C', 'C', 'G', 'G', 'GG', 'T', 'T', 'TA'])
+test_my_hw(verbose_on, func_hw5("A", "a", "t", "C", "g", "AA", "gG", "c", "AG", "T", "TA", "a", "G", "aaaa"), ['A', 'A', 'A', 'AA', 'AAAA', 'AG', 'C', 'C', 'G', 'G', 'GG', 'T', 'T', 'TA'])
 test_my_hw(verbose_on, func_hw5("c", "AAaattTTccCCggGGaAcCtTgG", "g"), ['AAAATTTTCCCCGGGGAACCTTGG', 'C', 'G'])
 
 print("HW6")
