@@ -34,9 +34,23 @@ def func_hw3(dna_seq):
     finally:
         return result
 
-def func_hw4(*args):
+def func_hw4(*argv):
     result = []
-
+    for curr_seq in argv:
+        upperstr = ""
+        for mychar in curr_seq:
+            if mychar == "a":
+                upperstr += "A"
+            elif mychar == "c":
+                upperstr += "C"
+            elif mychar == "g":
+                upperstr += "G"
+            elif mychar == "t":
+                upperstr += "T"
+            else:
+                upperstr += mychar
+        result.append(upperstr)
+    result.sort()
     return result
 
 def func_hw5(*args):
@@ -74,7 +88,7 @@ test_my_hw(verbose_on, func_hw3("ATATATATATATA"), 13)
 test_my_hw(verbose_on, func_hw3("CGACGAGCAAAGCAAAAAGGGAAA"), 24)
 
 print("HW4")
-test_my_hw(verbose_on, func_hw4("A", "a", "t" "C", "g", "AA", "gG", "c", "AG", "T", "TA", "a", "G", "aaaa"), ['A', 'A', 'A', 'AA', 'AAAA', 'AG', 'C', 'C', 'G', 'G', 'GG', 'T', 'T', 'TA'])
+test_my_hw(verbose_on, func_hw4("A", "a", "t", "C", "g", "AA", "gG", "c", "AG", "T", "TA", "a", "G", "aaaa"), ['A', 'A', 'A', 'AA', 'AAAA', 'AG', 'C', 'C', 'G', 'G', 'GG', 'T', 'T', 'TA'])
 test_my_hw(verbose_on, func_hw4("c", "AAaattTTccCCggGGaAcCtTgG", "g"), ['AAAATTTTCCCCGGGGAACCTTGG', 'C', 'G'])
 
 print("HW5")
