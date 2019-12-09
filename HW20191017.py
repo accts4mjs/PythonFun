@@ -3,11 +3,12 @@ import sys
 def func_hw1(dna_seq):
     result = ""
     for index in range(0, len(dna_seq)):
-        if dna_seq[index] == " ": continue
+        if dna_seq[index] == " ":
+            continue
         if dna_seq[index] == "T" or dna_seq[index] == "t":
-            result+= "U"
+            result += "U"
         else:
-            result+= dna_seq[index]
+            result += dna_seq[index]
     result = result.upper()
     return result
 
@@ -20,7 +21,7 @@ def func_hw2(dna_seq):
             result += "U"
         elif dna_seq[index] != " ":
             result += dna_seq[index]
-        index+= 1
+        index += 1
     result = result.upper()
     return result
 
@@ -29,8 +30,8 @@ def func_hw3(dna_seq):
     index = 0
     try:
         while dna_seq[index]:
-            result+= 1
-            index+= 1
+            result += 1
+            index += 1
     finally:
         return result
 
